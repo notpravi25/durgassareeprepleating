@@ -12,8 +12,8 @@ export const HeroSection = () => (
         height={1200}
         className="h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-maroon-deep/70" />
-      <div className="absolute inset-0 bg-gradient-to-r from-maroon-deep via-maroon-deep/85 to-transparent" />
+      <div className="absolute inset-0 bg-maroon-deep/25" />
+      <div className="absolute inset-0 bg-gradient-to-r from-maroon-deep/95 via-maroon-deep/65 to-transparent" />
     </div>
 
 

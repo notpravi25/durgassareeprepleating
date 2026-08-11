@@ -43,10 +43,6 @@ export const IntroductionSection = () => (
             className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
           />
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-4 -left-4 -z-10 h-32 w-32 rounded-2xl border border-gold/40"
-        />
       </Reveal>
     </div>
   </section>
