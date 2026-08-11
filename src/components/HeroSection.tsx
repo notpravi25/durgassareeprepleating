@@ -10,11 +10,12 @@ export const HeroSection = () => (
         alt="Deep maroon Kanjeevaram silk saree with crisp gold-bordered pleats"
         width={1600}
         height={1200}
-        fetchPriority="high"
         className="h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-maroon-deep/92 via-maroon-deep/75 to-maroon-deep/25" />
+      <div className="absolute inset-0 bg-maroon-deep/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-maroon-deep via-maroon-deep/85 to-transparent" />
     </div>
+
 
     <div className="container-narrow px-5 sm:px-8 py-24 sm:py-32 lg:py-40">
       <div className="max-w-2xl animate-fade-in">
