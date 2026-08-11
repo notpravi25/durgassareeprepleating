@@ -1,115 +1,119 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Moon, Sun } from "lucide-react";
-import { getCategories } from "@/data/projects";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { business } from "@/data/business";
+import { cn } from "@/lib/utils";
 
-interface NavbarProps {
-  selectedCategory?: string;
-  onCategoryChange?: (category: string) => void;
-}
+const navItems = [
+  { label: "Home", to: "/" },
+  { label: "Categories", to: "/categories" },
+  { label: "Orders", to: "/orders" },
+  { label: "Contact", to: "/contact" },
+];
 
-const Navbar = ({ selectedCategory, onCategoryChange }: NavbarProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   const location = useLocation();
-  
-  const isHomePage = location.pathname === "/";
-  
-  const categories = ["everything", ...getCategories().slice(0, 4)];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setIsDark(isDarkMode);
-  }, []);
-
-  const toggleTheme = () => {
-    const newIsDark = !isDark;
-    setIsDark(newIsDark);
-    document.documentElement.classList.toggle("dark", newIsDark);
-  };
+  useEffect(() => setOpen(false), [location.pathname]);
 
   return (
-    <>
+    <header
+      className={cn(
+        "fixed top-0 inset-x-0 z-50 transition-all duration-300",
+        scrolled
+          ? "bg-background/92 backdrop-blur-md border-b border-border shadow-soft"
+          : "bg-background/60 backdrop-blur-sm",
+      )}
+    >
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "bg-background/95 backdrop-blur-sm"
-            : "bg-transparent"
-        }`}
+        aria-label="Main navigation"
+        className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-5 sm:px-8"
       >
-        <div className="px-6">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link
-              to="/"
-              className="text-lg font-medium tracking-tight hover:opacity-70 transition-opacity duration-300"
-            >
-              Jordan Studio
-            </Link>
+        <Link to="/" className="flex flex-col leading-tight" aria-label={`${business.name} home`}>
+          <span className="font-serif text-lg sm:text-2xl font-semibold text-primary">Durga's</span>
+          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+            Saree Pre-Pleating
+          </span>
+        </Link>
 
-            {/* Center: Category Filters (Desktop only, only on Home page) */}
-            {isHomePage && onCategoryChange && (
-              <div className="hidden md:flex items-center gap-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => onCategoryChange(category)}
-                    className={`px-4 py-1.5 text-sm rounded-full transition-all duration-300 ${
-                      selectedCategory === category
-                        ? "bg-foreground text-background"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+        <ul className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                className={({ isActive }) =>
+                  cn(
+                    "relative text-sm tracking-wide transition-colors hover:text-primary after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-accent after:transition-all",
+                    isActive
+                      ? "text-primary after:w-full"
+                      : "text-muted-foreground after:w-0 hover:after:w-full",
+                  )
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-2">
+          <Button asChild size="sm" className="hidden sm:inline-flex rounded-full px-5">
+            <Link to="/orders">Book Now</Link>
+          </Button>
+
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" aria-label="Open menu">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[82vw] max-w-xs bg-background p-0">
+              <div className="flex h-16 items-center justify-between border-b border-border px-5">
+                <span className="font-serif text-xl text-primary">Menu</span>
+                <SheetClose asChild>
+                  <Button variant="ghost" size="icon" aria-label="Close menu">
+                    <X className="h-5 w-5" />
+                  </Button>
+                </SheetClose>
               </div>
-            )}
-
-            {/* Right side: Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="p-2 hover:opacity-70 transition-opacity duration-300"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-          </div>
+              <ul className="flex flex-col p-5 gap-1">
+                {navItems.map((item) => (
+                  <li key={item.to}>
+                    <NavLink
+                      to={item.to}
+                      className={({ isActive }) =>
+                        cn(
+                          "block rounded-lg px-3 py-3 font-serif text-xl transition-colors",
+                          isActive ? "bg-secondary text-primary" : "text-foreground hover:bg-secondary",
+                        )
+                      }
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                ))}
+                <li className="pt-4">
+                  <Button asChild className="w-full rounded-full" size="lg">
+                    <Link to="/orders">Book Now</Link>
+                  </Button>
+                </li>
+              </ul>
+            </SheetContent>
+          </Sheet>
         </div>
       </nav>
-
-      {/* Mobile: Scrollable Categories below header (only on Home page) */}
-      {isHomePage && onCategoryChange && (
-        <div className="fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm md:hidden">
-          <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex gap-2 px-6 py-3 w-max">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => onCategoryChange(category)}
-                  className={`px-4 py-2 text-sm rounded-full whitespace-nowrap transition-all duration-300 ${
-                    selectedCategory === category
-                      ? "bg-foreground text-background"
-                      : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+    </header>
   );
 };
 
