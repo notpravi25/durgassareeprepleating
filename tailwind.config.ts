@@ -30,6 +30,14 @@ export default {
         "headline": ["clamp(2rem, 5vw, 4rem)", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
         "subheadline": ["clamp(1.25rem, 2vw, 1.75rem)", { lineHeight: "1.4" }],
       },
+      boxShadow: {
+        soft: "var(--shadow-soft)",
+        lift: "var(--shadow-lift)",
+      },
+      backgroundImage: {
+        "gradient-festive": "var(--gradient-festive)",
+        "gradient-soft": "var(--gradient-soft)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -55,6 +63,13 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+        },
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          soft: "hsl(var(--gold-soft))",
+        },
+        maroon: {
+          deep: "hsl(var(--maroon-deep))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
