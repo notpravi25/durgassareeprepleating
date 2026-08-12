@@ -7,6 +7,8 @@ import g6 from "@/assets/gallery-6.jpg";
 import g7 from "@/assets/gallery-7.jpg";
 import g8 from "@/assets/gallery-8.jpg";
 
+const g5 = g5Asset.url;
+
 export const galleryCategories = [
   "All",
   "Pre-Pleating",
