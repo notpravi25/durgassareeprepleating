@@ -1,5 +1,5 @@
 const AUTH_KEY = "durgas_admin_authenticated";
-const DEFAULT_PASSWORD = "25122005";
+const DEFAULT_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || "25122005";
 
 export const auth = {
   login: async (password: string): Promise<boolean> => {
