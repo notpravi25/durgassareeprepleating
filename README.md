@@ -1,10 +1,10 @@
-# 🪔 Durga's Saree Pre-Pleating Services Web Application
+#  Durga's Saree Pre-Pleating Services Web Application
 
 A premium, modern, and mobile-first web application designed for a local **Saree Pre-Pleating, Draping, and Styling business**. Built using React, TypeScript, and Tailwind CSS, the application offers clients a seamless booking journey while providing the business owner with a fully-featured, secure admin management panel.
 
 ---
 
-## 🚀 Core Functionalities
+## Core Functionalities
 
 ### 1. Client Booking Journey
 * **Multi-Step Booking Form (`/orders`)**: Guides clients through selecting saree count, fabric types (e.g. Kanjeevaram, Organza, Banarasi), specific services (pre-pleating, box folding, hanger folding, tassels), target completion date, festive add-ons, and contact details.
