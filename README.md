@@ -25,7 +25,7 @@ A premium, modern, and mobile-first web application designed for a local **Saree
 
 ---
 
-## 🛠️ Technical Stack
+##  Technical Stack
 
 * **Frontend Framework**: [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 * **CSS & Styling**: [Tailwind CSS](https://tailwindcss.com/) for responsive layouts. Custom vanilla CSS rules are used for advanced animations:
@@ -39,7 +39,7 @@ A premium, modern, and mobile-first web application designed for a local **Saree
 
 ---
 
-## 📁 File Structure Highlights
+##  File Structure Highlights
 
 * `src/components/` - Holds UI elements including section templates:
   * [IntroductionSection.tsx](file:///c:/Users/user/Documents/durgassareeprepleating/src/components/IntroductionSection.tsx) - Core introduction block.
@@ -57,33 +57,12 @@ A premium, modern, and mobile-first web application designed for a local **Saree
 * `src/lib/` - Local mock database, auth, and WhatsApp string parsers.
 
 ---
-
-## 💻 Local Development
-
-### 1. Installation
-Clone the repository, navigate into the directory, and install dependencies:
-```sh
-npm install
-```
-
-### 2. Start Dev Server
-Run the local Vite development server:
-```sh
-npm run dev
-```
-Open [http://localhost:8080](http://localhost:8080) in your web browser.
-
-### 3. Production Build
-Verify code compilation and create a minified output in the `dist` folder:
-```sh
-npm run build
-```
+<img width="1905" height="962" alt="Screenshot 2026-08-12 193541" src="https://github.com/user-attachments/assets/c91c6c32-f6d0-4f31-b554-3f1d2f965433" />
+<img width="1918" height="966" alt="Screenshot 2026-08-12 193758" src="https://github.com/user-attachments/assets/ae5f4d01-7bab-4fe6-8d6d-01149680f20c" />
+<img width="1918" height="965" alt="Screenshot 2026-08-12 193724" src="https://github.com/user-attachments/assets/a6eec313-9e5e-4a7a-8fd0-22f2c73d8fd8" />
+<img width="1917" height="966" alt="Screenshot 2026-08-12 193649" src="https://github.com/user-attachments/assets/7fd1e9ab-bd9c-41e8-ab71-7c07eb3256f5" />
 
 ---
 
 ## ☁️ Deployment on Vercel
-
-The application is pre-configured for Vercel. 
-1. Log in to [Vercel](https://vercel.com) using your GitHub account.
-2. Import the `durgassareeprepleating` repository.
-3. Keep default settings and click **Deploy**.
+Live Link: https://durgassareeprepleating.vercel.app/admin
