@@ -76,9 +76,9 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "festive-yellow",
     image: g5,
-    alt: "Golden yellow silk saree with fluffy pleats beside festive lamps",
-    title: "Festive Fluffy Pleats",
-    description: "Fuller pleats styled for pooja days and festive gatherings.",
+    alt: "Grey and black handloom soft silk saree with silver zari pallu",
+    title: "Handloom Soft Silk",
+    description: "Double-warp soft silk with contrast pallu, pleated and pressed to hold its fall.",
     categories: ["Festive", "Special Occasions"],
     suggestedService: "Fluffy Pleats",
   },
