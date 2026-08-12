@@ -106,9 +106,9 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "bridal-maroon",
     image: g8,
-    alt: "Bridal maroon silk saree with gold zari border laid out with pleats",
-    title: "Bridal Silk Finish",
-    description: "Heavy silk pressed and pleated for wedding day comfort.",
+    alt: "Teal and green silk saree with gold zari border, crisply pre-pleated",
+    title: "Teal & Green Zari Pleats",
+    description: "Gold-zari silk pleated into neat, even folds with a perfectly set fall.",
     categories: ["Special Occasions", "Festive"],
     suggestedService: "Saree Ironing",
   },
