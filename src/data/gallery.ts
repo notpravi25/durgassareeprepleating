@@ -4,11 +4,12 @@ import g3Asset from "@/assets/gallery-maroon-gold-pleats.jpg.asset.json";
 import g4 from "@/assets/gallery-4.jpg";
 import g5Asset from "@/assets/gallery-grey-black-silk.jpg.asset.json";
 import g6 from "@/assets/gallery-6.jpg";
-import g7 from "@/assets/gallery-7.jpg";
+import g7Asset from "@/assets/gallery-burnt-orange-silk.jpg.asset.json";
 import g8 from "@/assets/gallery-8.jpg";
 
 const g3 = g3Asset.url;
 const g5 = g5Asset.url;
+const g7 = g7Asset.url;
 
 export const galleryCategories = [
   "All",
@@ -95,9 +96,9 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "pochampally-pallu",
     image: g7,
-    alt: "Green Pochampally silk saree pallu draped over the shoulder",
-    title: "Pochampally Pallu Set",
-    description: "Pallu pleated and pinned for a clean, symmetrical fall.",
+    alt: "Burnt orange silk saree with chocolate brown zari border, draped on a mannequin",
+    title: "Burnt Orange Silk Drape",
+    description: "Contrast zari border silk draped and pinned for a clean, symmetrical fall.",
     categories: ["Saree Draping", "Traditional"],
     suggestedService: "Saree Draping",
   },
