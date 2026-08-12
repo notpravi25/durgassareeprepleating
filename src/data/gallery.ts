@@ -5,11 +5,12 @@ import g4 from "@/assets/gallery-4.jpg";
 import g5Asset from "@/assets/gallery-grey-black-silk.jpg.asset.json";
 import g6 from "@/assets/gallery-6.jpg";
 import g7Asset from "@/assets/gallery-burnt-orange-silk.jpg.asset.json";
-import g8 from "@/assets/gallery-8.jpg";
+import g8Asset from "@/assets/gallery-teal-green-pleats.jpg.asset.json";
 
 const g3 = g3Asset.url;
 const g5 = g5Asset.url;
 const g7 = g7Asset.url;
+const g8 = g8Asset.url;
 
 export const galleryCategories = [
   "All",
@@ -105,9 +106,9 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "bridal-maroon",
     image: g8,
-    alt: "Bridal maroon silk saree with gold zari border laid out with pleats",
-    title: "Bridal Silk Finish",
-    description: "Heavy silk pressed and pleated for wedding day comfort.",
+    alt: "Teal and green silk saree with gold zari border, crisply pre-pleated",
+    title: "Teal & Green Zari Pleats",
+    description: "Gold-zari silk pleated into neat, even folds with a perfectly set fall.",
     categories: ["Special Occasions", "Festive"],
     suggestedService: "Saree Ironing",
   },
