@@ -25,7 +25,7 @@ export const FestivalSection = () => {
           {festivals.map((festival, i) => (
             <Reveal key={festival.id} delay={(i % 3) * 80} className="h-full">
               <div className="h-full text-foreground">
-                <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-card shadow-lift">
+                <article className="zari-card group flex h-full flex-col overflow-hidden rounded-2xl">
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
                       src={festival.image}

@@ -1,7 +1,6 @@
 import Reveal from "@/components/Reveal";
-import introAsset from "@/assets/intro-devotee.jpg.asset.json";
+import introImage from "@/assets/festive-drape.jpg";
 
-const introImage = introAsset.url;
 
 const occasions = [
   "Festivals",
@@ -38,7 +37,7 @@ export const IntroductionSection = () => (
         <div className="overflow-hidden rounded-2xl shadow-lift">
           <img
             src={introImage}
-            alt="Woman in a red silk saree holding a decorated Varamahalakshmi idol"
+            alt="Festive saree draping style with a neat, graceful fall"
             width={1119}
             height={1421}
             loading="lazy"

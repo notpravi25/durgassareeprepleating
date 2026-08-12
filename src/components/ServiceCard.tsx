@@ -7,7 +7,7 @@ export const ServiceCard = ({ service }: { service: Service }) => {
   const Icon = service.icon;
 
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-gold/60 hover:shadow-lift">
+    <article className="zari-card group flex h-full flex-col rounded-2xl p-6">
       <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary transition-colors group-hover:bg-gold/20">
         <Icon className="h-5 w-5" aria-hidden="true" />
       </span>

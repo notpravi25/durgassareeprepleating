@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-saree.jpg";
+import heroImage from "@/assets/drape-your-dreams.jpg";
 
 export const HeroSection = () => (
   <section className="relative isolate overflow-hidden bg-secondary">
@@ -14,12 +14,19 @@ export const HeroSection = () => (
       />
       <div className="absolute inset-0 bg-maroon-deep/25" />
       <div className="absolute inset-0 bg-gradient-to-r from-maroon-deep/95 via-maroon-deep/65 to-transparent" />
+      
+      {/* Decorative Floating Sparkles */}
+      <div className="absolute top-[20%] right-[10%] text-gold/40 text-3xl festive-sparkle pointer-events-none hidden md:block">✨</div>
+      <div className="absolute bottom-[25%] left-[5%] text-gold/30 text-2xl festive-sparkle pointer-events-none hidden md:block" style={{ animationDelay: "1s" }}>✨</div>
+      <div className="absolute top-[60%] right-[35%] text-gold/25 text-xl festive-sparkle pointer-events-none hidden md:block" style={{ animationDelay: "2.5s" }}>✨</div>
     </div>
 
 
     <div className="container-narrow px-5 sm:px-8 py-24 sm:py-32 lg:py-40">
       <div className="max-w-2xl animate-fade-in">
-        <p className="eyebrow text-gold">Pre-pleating · Draping · Festive styling</p>
+        <p className="eyebrow text-gold flex items-center gap-1.5 justify-start">
+          ✨ Pre-pleating · Draping · Festive styling ✨
+        </p>
         <h1 className="mt-4 font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1.05] text-primary-foreground">
           Durga's Saree Pre-Pleating Services
         </h1>
@@ -34,6 +41,14 @@ export const HeroSection = () => (
         <div className="mt-9 flex flex-col sm:flex-row gap-3">
           <Button asChild size="lg" className="rounded-full bg-gold text-accent-foreground hover:bg-gold/90 px-8">
             <Link to="/orders">Book Your Saree Service</Link>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="secondary"
+            className="rounded-full bg-secondary/80 text-secondary-foreground hover:bg-secondary px-8"
+          >
+            <Link to="/admin">Admin Portal</Link>
           </Button>
           <Button
             asChild

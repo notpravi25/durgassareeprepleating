@@ -12,8 +12,8 @@ export const Gallery = () => {
   const items = useMemo(
     () =>
       active === "All"
-        ? galleryItems
-        : galleryItems.filter((i) => i.categories.includes(active as any)),
+        ? galleryItems.filter((i) => !i.onlyShowInFilter)
+        : galleryItems.filter((i) => i.categories.includes(active as Exclude<GalleryCategory, "All">)),
     [active],
   );
 

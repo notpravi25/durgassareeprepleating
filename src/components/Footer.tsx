@@ -54,9 +54,12 @@ export const Footer = () => (
     </div>
 
     <div className="border-t border-primary-foreground/15">
-      <p className="container-narrow px-5 sm:px-8 py-5 text-center text-xs text-primary-foreground/60">
-        © 2026 {business.name}. All rights reserved.
-      </p>
+      <div className="container-narrow px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/60">
+        <p>© 2026 {business.name}. All rights reserved.</p>
+        <Link to="/admin/login" className="hover:text-gold transition-colors font-medium">
+          Admin Portal
+        </Link>
+      </div>
     </div>
   </footer>
 );

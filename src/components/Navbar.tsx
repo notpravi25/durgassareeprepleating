@@ -40,11 +40,14 @@ export const Navbar = () => {
         aria-label="Main navigation"
         className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-5 sm:px-8"
       >
-        <Link to="/" className="flex flex-col leading-tight" aria-label={`${business.name} home`}>
-          <span className="font-serif text-lg sm:text-2xl font-semibold text-primary">Durga's</span>
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-            Saree Pre-Pleating
-          </span>
+        <Link to="/" className="flex items-center gap-2 leading-tight" aria-label={`${business.name} home`}>
+          <span className="text-xl sm:text-2xl text-accent festive-sparkle">✨</span>
+          <div className="flex flex-col">
+            <span className="font-serif text-lg sm:text-2xl font-semibold text-primary">Durga's</span>
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+              Saree Pre-Pleating
+            </span>
+          </div>
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -68,6 +71,9 @@ export const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-2">
+          <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex rounded-full px-4 border-primary/30 text-primary hover:bg-secondary hover:text-primary">
+            <Link to="/admin">Admin</Link>
+          </Button>
           <Button asChild size="sm" className="hidden sm:inline-flex rounded-full px-5">
             <Link to="/orders">Book Now</Link>
           </Button>
@@ -103,9 +109,12 @@ export const Navbar = () => {
                     </NavLink>
                   </li>
                 ))}
-                <li className="pt-4">
+                <li className="pt-4 flex flex-col gap-2">
                   <Button asChild className="w-full rounded-full" size="lg">
                     <Link to="/orders">Book Now</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="w-full rounded-full border-primary/30 text-primary" size="lg">
+                    <Link to="/admin">Admin Portal</Link>
                   </Button>
                 </li>
               </ul>

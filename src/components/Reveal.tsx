@@ -12,7 +12,7 @@ interface RevealProps {
 export const Reveal = ({ children, className, delay = 0, as = "div" }: RevealProps) => {
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
-  const Tag = as as any;
+  const Tag = as;
 
   useEffect(() => {
     const el = ref.current;

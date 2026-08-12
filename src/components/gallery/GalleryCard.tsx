@@ -9,7 +9,7 @@ export const GalleryCard = ({ item, onOpen }: Props) => (
   <button
     type="button"
     onClick={() => onOpen(item)}
-    className="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl bg-secondary text-left shadow-soft transition-shadow hover:shadow-lift focus-visible:ring-2 focus-visible:ring-ring"
+    className="zari-card group mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl text-left focus-visible:ring-2 focus-visible:ring-ring"
     aria-label={`View ${item.title}`}
   >
     <div className="relative overflow-hidden">

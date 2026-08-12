@@ -18,6 +18,7 @@ import {
   isValidIndianPhone,
   type BookingData,
 } from "@/lib/booking";
+import { db } from "@/lib/db";
 
 type Stage = "form" | "summary" | "done";
 
@@ -105,7 +106,12 @@ export const BookingForm = () => {
   const whatsappHref = whatsappLink(buildWhatsAppMessage(data));
   const emailHref = buildEmailFallback(data);
 
-  const handleSend = () => {
+  const handleSend = async () => {
+    try {
+      await db.saveOrder(data);
+    } catch (err) {
+      console.error("Failed to save order to database", err);
+    }
     window.open(whatsappHref, "_blank", "noopener,noreferrer");
     setStage("done");
     window.scrollTo({ top: 0, behavior: "smooth" });
