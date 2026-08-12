@@ -2,10 +2,12 @@ import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
+import g5Asset from "@/assets/gallery-grey-black-silk.jpg.asset.json";
 import g6 from "@/assets/gallery-6.jpg";
 import g7 from "@/assets/gallery-7.jpg";
 import g8 from "@/assets/gallery-8.jpg";
+
+const g5 = g5Asset.url;
 
 export const galleryCategories = [
   "All",
@@ -74,9 +76,9 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "festive-yellow",
     image: g5,
-    alt: "Golden yellow silk saree with fluffy pleats beside festive lamps",
-    title: "Festive Fluffy Pleats",
-    description: "Fuller pleats styled for pooja days and festive gatherings.",
+    alt: "Grey and black handloom soft silk saree with silver zari pallu",
+    title: "Handloom Soft Silk",
+    description: "Double-warp soft silk with contrast pallu, pleated and pressed to hold its fall.",
     categories: ["Festive", "Special Occasions"],
     suggestedService: "Fluffy Pleats",
   },
