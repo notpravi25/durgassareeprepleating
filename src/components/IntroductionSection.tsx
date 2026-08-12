@@ -1,5 +1,7 @@
 import Reveal from "@/components/Reveal";
-import introImage from "@/assets/intro-pleating.jpg";
+import introAsset from "@/assets/intro-devotee.jpg.asset.json";
+
+const introImage = introAsset.url;
 
 const occasions = [
   "Festivals",
