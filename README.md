@@ -1,84 +1,89 @@
-# Saree pre pleating
+# 🪔 Durga's Saree Pre-Pleating Services Web Application
 
-Quero que você crie um novo template de site de portfólio para um designer gráfico, seguindo fielmente as referências visuais das imagens anexadas (estilo Daniel Triendl). Este template deve ser extremamente visual, direto e com forte presença das artes na interface. Siga TODAS as diretrizes abaixo sem desviar.
+A premium, modern, and mobile-first web application designed for a local **Saree Pre-Pleating, Draping, and Styling business**. Built using React, TypeScript, and Tailwind CSS, the application offers clients a seamless booking journey while providing the business owner with a fully-featured, secure admin management panel.
 
-# 🎨 DIREÇÃO DE ARTE E ESTILO
-- O site deve ser **majoritariamente branco**, quase editorial, com **tipografia preta** como elemento principal.
-- A tipografia deve ser **serifada elegante e grande** (como no site do Triendl) para headlines e **sans serif simples** para elementos secundários.
-- O layout precisa ser **minimalista**, porém com **peças visuais grandes** ocupando o viewport.
-- Nada de colunas estreitas ou margens exageradas. O grid é fluido e quase encostado na lateral (máx. 48–64px de margem).
-- Priorize **impacto visual**: as imagens dos projetos devem parecer obras expostas.
+---
 
-# 🖼️ HOME — ESTRUTURA OBRIGATÓRIA
-1. **Navbar super minimalista**  
-   - Logo + nome do designer no canto esquerdo.  
-   - Explore / Work / About / Contact no canto direito.  
-   - Tudo em preto, fundo branco.
+## 🚀 Core Functionalities
 
-2. **Hero de impacto**  
-   - Um mosaico com os **primeiros 3 a 5 projetos**, GRANDES, tomando quase toda a tela.  
-   - As imagens devem ser **ilustrações digitais, posters, editoriais, projetos de branding e magazines** (insira imagens fake seguindo esse estilo).
-   - Os cards devem ter formato vertical e horizontal, variando dinamicamente, assim como no Triendl.
-   - As imagens devem estar organizadas em um grid fluido, não em colunas rígidas.
+### 1. Client Booking Journey
+* **Multi-Step Booking Form (`/orders`)**: Guides clients through selecting saree count, fabric types (e.g. Kanjeevaram, Organza, Banarasi), specific services (pre-pleating, box folding, hanger folding, tassels), target completion date, festive add-ons, and contact details.
+* **Instant WhatsApp & Email Generator**: Dynamically compiles the client's form inputs into a beautifully formatted, ready-to-send enquiry text, opening a chat directly with the business WhatsApp number or triggering a draft email fallback.
+* **Responsive Portfolio Gallery (`/categories`)**: Filterable masonry grid sorted by category (Pre-Pleating, Draping, Festive, Traditional, Special Occasions) with an image lightbox zoom modal. Includes specific filter logic allowing target photos to display *only* when their specific category tab is active to keep the homepage clutter-free.
 
-3. **Titulo e bio curta ao rolar**
-   - Após o mosaico inicial, colocar um grande título serifado:  
-     **"Designer gráfico explorando cores, formas e narrativa visual."**
-   - Subheadline menor explicando áreas de atuação: ilustração, editorial, identidade visual, posters, etc.
+### 2. Client Conversion & Trust Building
+* **How It Works Section**: A step-by-step visual workflow explaining enquiry, hand-off, expert pleating, and delivery.
+* **Client Reviews / Testimonials**: Carousel cards highlighting real client feedback from brides, students, and festival goers.
+* **Interactive FAQ Accordion**: Interactive Q&A list addressing common client questions like processing times, travel packing security, fabric care, and draping.
 
-# 🧩 LISTAGEM DE PROJETOS
-- Cada projeto deve aparecer como **um card com imagem dominante** (80% imagem, 20% texto).
-- Embaixo da imagem, coloque:  
-  Nome do projeto + hashtags (#illustration #magazine #branding etc).  
-- Os cards devem ocupar boa largura da tela (máx. 2 a 3 colunas em desktop), igual ao Triendl.
+### 3. Business Management Panel (`/admin`)
+* **Secure Auth Gateway**: Route-guarded login portal protecting business analytics and customer records.
+* **Order Management Dashboard**: Displays a comprehensive table of all submitted bookings, sorting them by date and tracking customer location details.
+* **Status Updates**: Change order status on the fly (`Pending` ➔ `In Progress` ➔ `Completed` ➔ `Cancelled`) to track tasks.
+* **Export & Search**: Includes real-time search filtering (by name, phone, or location) and a **CSV Export** button that downloads all order records for offline bookkeeping.
+* **Dynamic Business Settings Editor**: Allows the administrator to edit contact info (WhatsApp number, email, address, and Google Maps embed URL) directly from the dashboard form. Changes persist in local storage and instantly update headers, footers, and links across the site without touching the codebase.
 
-# 📄 PÁGINA DE PROJETO
-A página do projeto deve seguir o mesmo estilo editorial das referências:
+---
 
-- Hero com **imagem enorme** do projeto (quase largura total).
-- Título serifado grande.
-- Subheadline com tags ou cliente.
-- Bloco de texto grande e confortável, alinhado à esquerda, similar ao estilo editorial do Triendl.
-- Galeria com imagens em escala grande e respiração generosa.
+## 🛠️ Technical Stack
 
-# ℹ️ SOBRE / ABOUT PAGE
-- Texto grande serifado dizendo quem é o designer.
-- Bio curta logo abaixo.
-- Coluna com:  
-  - Clientes selecionados  
-  - Contatos  
-  - Localização  
-  - Links de redes  
-- Tudo extremamente branco e limpo.
+* **Frontend Framework**: [Vite](https://vitejs.dev/) + [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+* **CSS & Styling**: [Tailwind CSS](https://tailwindcss.com/) for responsive layouts. Custom vanilla CSS rules are used for advanced animations:
+  * **Zari Borders (`.zari-card`)**: A custom card double-border design styled to look like traditional golden zari threads on silk sarees.
+  * **Marigold/Diya Motif Dividers (`.motif-divider`)**: Custom dividers utilizing pseudo-elements to render a centered `🌸 🪔 🌸` motif with gold gradients.
+  * **Sparkle Animations (`.festive-sparkle`)**: Keyframe floating/rotation effects applied to background overlays and brand marks for a festive vibe.
+* **Icons**: [Lucide React](https://lucide.dev/)
+* **Router**: [React Router DOM](https://reactrouter.com/) (configured in `BrowserRouter` format for clean URLs).
+* **Database Representation**: Simulated client-side DB (`localStorage`) with simulated network latencies (300ms delays) to mock real database response times.
+* **Deployment Config**: Vercel-ready with rewrites setup in `vercel.json` to support clean single-page app (SPA) refreshes.
 
-# 🧭 FOOTER
-- Minimalista com poucas opções: Work · About · Contact.
+---
 
-# 📌 INSTRUÇÕES ESPECIAIS
-- Insira imagens fake de ilustrações digitais, posters, capas de revista, projetos editoriais, e identidades visuais coloridas — **CORES FORTES E ESTILO ARTY**, como no Triendl.
-- Não use imagens corporativas, UI design ou fotos.  
-- O foco é **arte gráfica, ilustração e editorial**.
-- Tenha certeza absoluta de que os projetos são o **elemento mais chamativo** d
+## 📁 File Structure Highlights
 
-This project was built with [Lovable](https://lovable.dev).
+* `src/components/` - Holds UI elements including section templates:
+  * [IntroductionSection.tsx](file:///c:/Users/user/Documents/durgassareeprepleating/src/components/IntroductionSection.tsx) - Core introduction block.
+  * [HowItWorks.tsx](file:///c:/Users/user/Documents/durgassareeprepleating/src/components/HowItWorks.tsx) - Onboarding steps.
+  * [TestimonialsSection.tsx](file:///c:/Users/user/Documents/durgassareeprepleating/src/components/TestimonialsSection.tsx) - Review cards.
+  * [FaqSection.tsx](file:///c:/Users/user/Documents/durgassareeprepleating/src/components/FaqSection.tsx) - Collapsible FAQs.
+  * `booking/` - Booking components (selectors, summaries).
+  * `gallery/` - Masonry grids and lightboxes.
+* `src/pages/` - Router pages:
+  * [Home.tsx](file:///c:/Users/user/Documents/durgassareeprepleating/src/pages/Home.tsx) - Main page layout combining all landing elements.
+  * [AdminDashboard.tsx](file:///c:/Users/user/Documents/durgassareeprepleating/src/pages/AdminDashboard.tsx) - Order management table & settings editor.
+* `src/data/` - Static records:
+  * [business.ts](file:///c:/Users/user/Documents/durgassareeprepleating/src/data/business.ts) - Storage-backed settings object.
+  * [gallery.ts](file:///c:/Users/user/Documents/durgassareeprepleating/src/data/gallery.ts) - Image arrays.
+* `src/lib/` - Local mock database, auth, and WhatsApp string parsers.
 
-**Live app**: https://durgassareeprepleating.lovable.app
+---
 
-## Build with Lovable
+## 💻 Local Development
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/aaabce5d-0ab5-4a67-a8d6-3ef8bc9af5eb).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
+### 1. Installation
+Clone the repository, navigate into the directory, and install dependencies:
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
+```
+
+### 2. Start Dev Server
+Run the local Vite development server:
+```sh
 npm run dev
 ```
+Open [http://localhost:8080](http://localhost:8080) in your web browser.
+
+### 3. Production Build
+Verify code compilation and create a minified output in the `dist` folder:
+```sh
+npm run build
+```
+
+---
+
+## ☁️ Deployment on Vercel
+
+The application is pre-configured for Vercel. 
+1. Log in to [Vercel](https://vercel.com) using your GitHub account.
+2. Import the `durgassareeprepleating` repository.
+3. Keep default settings and click **Deploy**.
