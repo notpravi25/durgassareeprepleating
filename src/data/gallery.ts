@@ -1,12 +1,13 @@
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
+import g3Asset from "@/assets/gallery-maroon-gold-pleats.jpg.asset.json";
 import g4 from "@/assets/gallery-4.jpg";
 import g5Asset from "@/assets/gallery-grey-black-silk.jpg.asset.json";
 import g6 from "@/assets/gallery-6.jpg";
 import g7 from "@/assets/gallery-7.jpg";
 import g8 from "@/assets/gallery-8.jpg";
 
+const g3 = g3Asset.url;
 const g5 = g5Asset.url;
 
 export const galleryCategories = [
@@ -58,9 +59,9 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "tassels",
     image: g3,
-    alt: "Close-up of gold and maroon saree tassels",
-    title: "Handmade Kuchu Tassels",
-    description: "Tassel finishing in matching thread and gold beads.",
+    alt: "Maroon silk saree with gold zari, neatly pre-pleated in even folds",
+    title: "Maroon & Gold Pre-Pleats",
+    description: "Zari-bordered silk pleated in crisp, even folds ready to wear.",
     categories: ["Traditional", "Special Occasions"],
     suggestedService: "Tassels",
   },
