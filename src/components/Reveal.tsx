@@ -32,7 +32,7 @@ export const Reveal = ({ children, className, delay = 0, as = "div" }: RevealPro
 
   return (
     <Tag
-      ref={ref}
+      ref={ref as any}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn("reveal", visible && "is-visible", className)}
     >
