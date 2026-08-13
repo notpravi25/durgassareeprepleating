@@ -58,11 +58,7 @@ export const ContactSection = () => {
                     Get Directions
                   </a>
                 </Button>
-              ) : (
-                <Button variant="outline" className="mt-4 rounded-full" disabled>
-                  Get Directions (coming soon)
-                </Button>
-              )}
+              ) : null}
             </article>
           </Reveal>
         </div>
