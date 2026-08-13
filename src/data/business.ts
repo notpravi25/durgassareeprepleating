@@ -23,8 +23,8 @@ const defaultBusiness: BusinessSettings = {
   phone: "9110304317",
   phoneIntl: "919110304317", // used for WhatsApp / tel links
   email: "sravyasuryasri1234567@gmail.com",
-  locationLabel: "Service location — to be updated",
-  locationNote: "Pickup and drop details are shared over WhatsApp.",
+  locationLabel: "Rajeevnagar, Kurmannapalem, Visakhapatnam",
+  locationNote: "",
   mapsUrl: "",
 };
 
